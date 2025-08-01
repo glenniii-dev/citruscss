@@ -1,7 +1,12 @@
 /**
  * CitrusCSS
- * Version 0.2.9
+ * Version 0.1
+ * 
+ * GET THE FILE:
  * https://github.com/glenniii-dev/citruscss
+ *
+ * SEE THE FEATURES:
+ * https://citruscss.glenniii.dev
  *
  * A lightweight, modern, citrus-themed stylesheet for clean and accessible HTML styling.
  *
@@ -384,3 +389,5 @@ details[open] summary { margin-bottom: var(--padding-small); }
     h5 { font-size: 1.5rem; }
     h6 { font-size: 1.25rem; }
 }
+
+
