@@ -1,0 +1,386 @@
+/**
+ * CitrusCSS
+ * Version 0.2.9
+ * https://github.com/glenniii-dev/citruscss
+ *
+ * A lightweight, modern, citrus-themed stylesheet for clean and accessible HTML styling.
+ *
+ * Sections:
+ * 1. Root Variables
+ * 2. Global Resets
+ * 3. Typography
+ * 4. Content Sectioning
+ * 5. Text Content
+ * 6. Inline Text Semantics
+ * 7. Image and Multimedia
+ * 8. Tables
+ * 9. Forms
+ * 10. Interactive Elements
+ * 11. Custom Components
+ * 12. Responsive Design
+ */
+:root {
+    --background-primary: #121212;
+    --background-secondary: #1e1e1e;
+    --background-tertiary: #2a2a2a;
+    --background-muted: #222;
+    --color-primary: #f5f5f5;
+    --color-link: #33cc33;
+    --color-link-transparent: rgba(255, 204, 128, 0.15);
+    --color-highlight: #333;
+    --orange: #ff9900;
+    --green: #33cc33;
+    --border-primary: #444;
+    --border-secondary: #555;
+    --border-highlight: #ff9900;
+    --padding-xsmall: 0.45rem;
+    --padding-small: 0.75rem;
+    --padding-medium: 1.5rem;
+    --padding-large: 2.5rem;
+    --border-radius-small: 0.5rem;
+    --border-radius-large: 1rem;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.2s ease-in-out;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-primary: #ffffff;
+        --background-secondary: #f5f5f5;
+        --background-tertiary: #f0f0f0;
+        --background-muted: #f7f7f7;
+        --color-primary: #333333;
+        --color-link: #33cc33;
+        --color-link-transparent: rgba(230, 138, 0, 0.15);
+        --color-highlight: #e0e0e0;
+        --border-primary: #cccccc;
+        --border-secondary: #bbbbbb;
+        --border-highlight: #ff9900;
+    }
+}
+
+/* Global Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    background: var(--background-primary);
+    color: var(--color-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: var(--padding-medium);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    margin-bottom: var(--padding-small);
+    background-image: linear-gradient(to right, var(--orange), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 { font-size: 2.5rem; line-height: 1.2; }
+h2 { font-size: 2rem; line-height: 1.3; }
+h3 { font-size: 1.75rem; line-height: 1.4; }
+h4 { font-size: 1.5rem; line-height: 1.4; }
+h5 { font-size: 1.25rem; line-height: 1.5; }
+h6 { font-size: 1.125rem; line-height: 1.5; }
+
+p { margin-bottom: var(--padding-small); }
+span { font-weight: inherit; font-size: inherit; line-height: inherit; }
+
+/* Content Sectioning */
+header, footer, nav, main, section { padding: var(--padding-medium) 0; }
+header { border-bottom: 1px solid var(--border-primary); }
+footer { border-top: 1px solid var(--border-primary); }
+aside {
+    background: var(--background-muted);
+    border-radius: var(--border-radius-large);
+    padding: var(--padding-small);
+    margin: var(--padding-small);
+    font-style: italic;
+    max-width: 100%;
+}
+
+/* Text Content */
+blockquote {
+    border-left: 5px solid var(--border-primary);
+    padding-left: var(--padding-small);
+    margin: var(--padding-small) 0;
+    font-style: italic;
+}
+
+dl, ul, ol { margin: var(--padding-small) 0; }
+dt { font-weight: 700; }
+dd { margin-bottom: var(--padding-small); }
+ul, ol { padding-left: var(--padding-medium); }
+li { margin-bottom: 0.5rem; }
+
+pre, code {
+    background: var(--background-muted);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-small);
+    margin: var(--padding-small) 0;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+pre>code { border: none; padding: 0; }
+
+/* Inline Text Semantics */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover, a:focus { 
+    color: var(--border-highlight); 
+    text-decoration: underline wavy var(--color-link);
+}
+
+mark, samp, kbd, time {
+    background: var(--color-highlight);
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--border-radius-small);
+}
+
+abbr {
+    text-decoration: underline dotted var(--orange);
+    cursor: help;
+}
+
+q {
+    padding: 0 0.5rem;
+    font-style: italic;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-primary);
+    margin: var(--padding-medium) 0;
+}
+
+/* Image and Multimedia */
+img, video, audio {
+    max-width: 100%;
+    border-radius: var(--border-radius-large);
+    margin: var(--padding-small) var(--padding-small) var(--padding-small) 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--background-muted);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    margin: var(--padding-small) 0;
+}
+
+th, td {
+    padding: var(--padding-small);
+    text-align: left;
+    border: 1px solid var(--border-primary);
+}
+
+th { background: var(--background-tertiary); }
+tr:hover td { background: var(--color-highlight); }
+
+/* Forms */
+button, input, select {
+    font-family: "Rubik", sans-serif;
+    font-size: 1rem;
+    border-radius: var(--border-radius-small);
+    border: 1.5px solid var(--border-secondary);
+    background: var(--background-muted);
+    color: var(--color-primary);
+    padding: var(--padding-xsmall);
+    margin: var(--padding-small) 0;
+    transition: var(--transition);
+    max-width: 100%;
+}
+
+button {
+    color: var(--color-primary);
+    background-color: var(--background-primary);
+    width: fit-content;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    padding: 0.25rem 1.25rem;
+    border: 1.5px solid var(--border-secondary);
+    border-radius: var(--border-radius-small);
+    box-shadow: 3px 3px 0 0 var(--orange);
+    transition-duration: 200ms;
+}
+
+button:hover {
+    box-shadow: 0 0 0 0 var(--orange);
+    transform: translate(3px, 3px);
+}
+
+button:disabled,
+button[disabled] {
+    border: 1.5px solid var(--border-secondary);
+    cursor: initial;
+    opacity: 0.55;
+}
+
+button:disabled:hover,
+button[disabled]:hover {
+    box-shadow: 2px 2px 0 0 var(--orange), 2px 2px 4px 0 var(--green);
+    transform: translate(0, 0);
+}
+
+label {
+    margin-right: var(--padding-small);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--border-highlight);
+    outline: none;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+    margin-right: var(--padding-xsmall);
+    accent-color: var(--orange);
+}
+
+option {
+    background: var(--background-muted);
+    color: var(--color-primary);
+    font-family: "Rubik", sans-serif;
+    padding: var(--padding-xsmall);
+}
+option:hover {
+    background: var(--color-highlight);
+}
+
+textarea {
+    font-family: "Rubik", sans-serif;
+    font-size: 1rem;
+    border-radius: var(--border-radius-small);
+    border: 1.5px solid var(--border-secondary);
+    background: var(--background-muted);
+    color: var(--color-primary);
+    padding: var(--padding-xsmall);
+    margin: 0;
+    transition: var(--transition);
+    max-width: 100%;
+}
+
+fieldset {
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-medium);
+    margin-bottom: var(--padding-small);
+    max-width: 100%;
+}
+
+/* Interactive Elements */
+details {
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-small);
+    max-width: 100%;
+}
+
+summary {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+details[open] summary { margin-bottom: var(--padding-small); }
+
+/* Custom Components */
+.card {
+    background: var(--background-muted);
+    border-radius: var(--border-radius-large);
+    padding: var(--padding-medium);
+    margin: var(--padding-small) 0;
+    box-shadow: var(--shadow);
+    max-width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.875rem;
+        padding: var(--padding-small);
+        max-width: 100%;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.125rem; }
+    h6 { font-size: 1rem; }
+    header, footer {
+        text-align: center;
+    }
+    header > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+        margin-top: var(--padding-small);
+    }
+    section, main {
+        padding: var(--padding-small) 0;
+    }
+    button {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    input, select, textarea {
+        width: 100%;
+    }
+    aside {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.875rem; }
+    h3 { font-size: 1.625rem; }
+    h4 { font-size: 1.375rem; }
+    h5 { font-size: 1.25rem; }
+    h6 { font-size: 1.125rem; }
+    header > div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    button {
+        width: fit-content;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1.125rem;
+        max-width: 800px;
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2rem; }
+    h4 { font-size: 1.75rem; }
+    h5 { font-size: 1.5rem; }
+    h6 { font-size: 1.25rem; }
+}
