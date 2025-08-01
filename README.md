@@ -1,6 +1,6 @@
 # 🍊 CitrusCSS
 
-A lightweight, classless CSS library with a fresh, citrus-inspired theme!
+A lightweight CSS stylesheet with a fresh, citrus-inspired theme!
 
 CitrusCSS is perfect for developers who want a clean and modern starting point for their projects without the heavy overhead of a full CSS framework. It's designed to be simple, accessible, and easy to customize.
 
